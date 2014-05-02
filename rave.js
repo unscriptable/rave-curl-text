@@ -7,6 +7,12 @@ var text = require('curl/plugin/text');
 exports.create = create;
 
 function create (context) {
+	var info = {
+		name: 'curl/plugin/text',
+		module: text
+	};
 	if (!context.amdPluginMap) context.amdPluginMap = {};
-	context.amdPluginMap.text = 'curl/plugin/text';
+	context.amdPluginMap['text']
+		= context.amdPluginMap['curl/plugin/text']
+		= info;
 }
