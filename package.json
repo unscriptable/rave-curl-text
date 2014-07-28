@@ -1,9 +1,20 @@
 {
 	"name": "rave-curl-text",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Adds curl's text AMD plugin to RaveJS.",
 	"main": "rave.js",
-	"rave": "rave",
+	"rave": {
+		"extension": "rave",
+		"overrides": {
+			"curl": {
+				"location": "node_modules/curl/src/curl"
+			}
+		}
+	},
+	"peerDependencies": {
+		"curl": "~0.8",
+		"rave-amd-plugins": "~0.2"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:unscriptable/rave-curl-text.git"
@@ -21,11 +32,5 @@
 	"contributors": [
 		"John Hann (http://unscriptable.com)",
 		"Brian Cavalier (http://hovercraftstudios.com)"
-	],
-	"dependencies": {
-		"curl": "~0.8"
-	},
-	"peerDependencies": {
-		"rave-amd-plugins": "~0.1"
-	}
+	]
 }
